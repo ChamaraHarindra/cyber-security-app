@@ -3,7 +3,8 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["plugin:react/recommended", "google", "prettier"],
+  extends: ["plugin:@next/next/recommended", "google", "prettier"],
+
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -12,11 +13,15 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["extends", "@typescript-eslint"],
-  rules: {},
+  plugins: ["react", "@typescript-eslint"],
+  rules: {
+    "require-jsdoc": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { extensions: [".tsx", ".jsx"] }],
+  },
   settings: {
     react: {
-      version: "latest",
+      version: "999.999.999",
     },
   },
 };
