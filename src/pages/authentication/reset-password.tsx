@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { NextPage } from "next";
 import AuthenticationLayout from "@/components/Layouts/AuthenticationLayout/AuthenticationLayout";
 import {
@@ -8,15 +7,10 @@ import {
   FormControl,
   FormLabel,
   Input,
-  InputGroup,
-  InputRightElement,
   Button,
 } from "@chakra-ui/react";
 
-const Login: NextPage = () => {
-  const [show, setShow] = useState(false);
-  const handleClick = () => setShow(!show);
-
+const ResetPassword: NextPage = () => {
   return (
     <AuthenticationLayout
       title={"Reset Password"}
@@ -41,4 +35,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default ResetPassword;

@@ -1,3 +1,6 @@
+@import "./variables.scss";
+@import "./breadcrumbs.scss";
+
 html,
 body {
   padding: 0;
@@ -19,4 +22,52 @@ html,
 body,
 #__next {
   min-height: 100vh !important;
+}
+
+// sidebar Nav
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  border-radius: 16px;
+  font-weight: 500;
+  color: #2d3748;
+  text-decoration: none;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  margin: 0.4rem 0;
+  &:hover {
+    background-color: $primary-50;
+    text-decoration: none !important;
+  }
+
+  &.collapsed {
+    padding: 0.7rem 0;
+    margin: 0 -0.7rem;
+    display: flex;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  &__selected {
+    background-color: $primary-500 !important;
+
+    svg {
+      fill: $primary-100;
+    }
+
+    p {
+      color: $white;
+    }
+  }
+}
+
+.chakra-ui-dark .navItem {
+  svg {
+    fill: $primary-50;
+  }
+
+  &:hover {
+    background-color: $gray-800;
+  }
 }

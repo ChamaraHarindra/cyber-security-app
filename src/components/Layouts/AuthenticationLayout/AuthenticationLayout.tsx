@@ -12,13 +12,22 @@ const AuthenticationLayout = ({ children, title, desc }: Props) => {
     <>
       <Box
         display={"flex"}
-        bg={"gray.500"}
         alignItems={"center"}
         w={"100%"}
         h={"100%"}
         minH={"100vh"}
         justifyContent={"center"}
+        backgroundImage={"/images/authentication-bg.jpg"}
+        backgroundPosition={"center center"}
+        backgroundSize={"cover"}
       >
+        <Box
+          w={"100%"}
+          h={"100%"}
+          position={"absolute"}
+          zIndex={1}
+          bg={"rgba(0,0,0,0.8)"}
+        />
         <Box
           bg={"white"}
           minW={["320px", "520px"]}
@@ -27,6 +36,8 @@ const AuthenticationLayout = ({ children, title, desc }: Props) => {
           boxShadow={"lg"}
           px={5}
           py={10}
+          pos={"relative"}
+          zIndex={2}
         >
           <Image
             src={"/images/logo.svg"}

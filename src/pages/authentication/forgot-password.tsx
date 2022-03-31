@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { NextPage } from "next";
 import AuthenticationLayout from "@/components/Layouts/AuthenticationLayout/AuthenticationLayout";
 import {
@@ -11,10 +10,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 
-const Login: NextPage = () => {
-  const [show, setShow] = useState(false);
-  const handleClick = () => setShow(!show);
-
+const ForgotPassword: NextPage = () => {
   return (
     <AuthenticationLayout
       title={"Forgot Password"}
@@ -37,4 +33,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;
