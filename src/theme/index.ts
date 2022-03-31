@@ -8,9 +8,9 @@ const theme = extendTheme(
       useSystemColorMode: false,
     },
     styles: {
-      global: () => ({
+      global: (props: any) => ({
         body: {
-          bg: mode("gray.50", "gray.800"),
+          bg: mode("gray.50", "gray.800")(props),
         },
       }),
     },
