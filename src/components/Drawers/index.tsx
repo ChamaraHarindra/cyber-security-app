@@ -11,28 +11,34 @@ import {
 
 interface Props {
   children?: ReactNode;
-  footer?: ReactNode;
   isOpen: boolean;
   onClose: () => void;
   title: string;
+  size?: string;
 }
 
-const DefaultDrawer = ({ isOpen, onClose, children, title, footer }: Props) => {
+const DefaultDrawer = ({ isOpen, onClose, children, title, size }: Props) => {
   return (
     <>
-      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+      <Drawer
+        isOpen={isOpen}
+        size={size ? size : "md"}
+        placement="right"
+        onClose={onClose}
+      >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
           {title && <DrawerHeader>{title}</DrawerHeader>}
 
           <DrawerBody>{children}</DrawerBody>
-
-          {footer && <DrawerFooter>{footer}</DrawerFooter>}
         </DrawerContent>
       </Drawer>
     </>
   );
+};
+DefaultDrawer.Footer = ({ children }: Props) => {
+  return <DrawerFooter>{children}</DrawerFooter>;
 };
 
 export default DefaultDrawer;

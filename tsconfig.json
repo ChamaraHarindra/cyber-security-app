@@ -23,6 +23,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "./src",
+    "typeRoots": ["./node_modules/@types", "./types/react-table-config.ts"],
     "paths": {
       "@/components/*": ["components/*"]
     }

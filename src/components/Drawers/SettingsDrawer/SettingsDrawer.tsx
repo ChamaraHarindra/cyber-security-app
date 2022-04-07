@@ -6,7 +6,12 @@ interface Props {
 }
 const SettingsDrawer = ({ isOpen, onClose }: Props) => {
   return (
-    <DefaultDrawer title={"Settings"} isOpen={isOpen} onClose={onClose}>
+    <DefaultDrawer
+      size={"xs"}
+      title={"Settings"}
+      isOpen={isOpen}
+      onClose={onClose}
+    >
       Hello
     </DefaultDrawer>
   );
