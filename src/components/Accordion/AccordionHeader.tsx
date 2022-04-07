@@ -25,7 +25,7 @@ const AccordionHeader = ({ number, title, subTitle, completed }: Props) => {
       borderTopLeftRadius={"md"}
       border={"1px"}
       borderColor={completed ? "green.200" : "gray.300"}
-      bg={completed && "green.50"}
+      bg={completed ? "green.50" : "white"}
     >
       <Box flex="1" textAlign="left">
         <Flex alignItems={"center"}>

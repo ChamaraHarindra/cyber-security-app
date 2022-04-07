@@ -6,7 +6,6 @@ import {
   AccordionPanel,
   AccordionButton,
   Box,
-  AccordionIcon,
   Text,
   Icon,
   Radio,
@@ -42,7 +41,7 @@ interface Props {
 }
 
 const GenerateReportDrawer = ({ isOpen, onClose }: Props) => {
-  const [index, setIndex] = useState([]);
+  // const [index, setIndex] = useState([]);
   const [value, setValue] = useState("1");
 
   const data = useMemo(
@@ -196,7 +195,7 @@ const GenerateReportDrawer = ({ isOpen, onClose }: Props) => {
         onClose={onClose}
         size={"xl"}
       >
-        <Accordion mb={10} defaultIndex={[0]} index={index} onChange={setIndex}>
+        <Accordion mb={10} defaultIndex={[0]}>
           <AccordionItem border={"none"}>
             <AccordionHeader
               completed
@@ -250,11 +249,7 @@ const GenerateReportDrawer = ({ isOpen, onClose }: Props) => {
                 <Textarea id={"desc"} />
               </FormControl>
               <Flex justifyContent={"flex-end"} mt={8}>
-                <Button
-                  size="lg"
-                  colorScheme={"brandGreen"}
-                  onClick={() => setIndex([1])}
-                >
+                <Button size="lg" colorScheme={"brandGreen"}>
                   Select Scope
                 </Button>
               </Flex>
@@ -282,14 +277,8 @@ const GenerateReportDrawer = ({ isOpen, onClose }: Props) => {
                 </Stack>
               </RadioGroup>
               <Flex justifyContent={"space-between"} mt={8}>
-                <Button size="lg" onClick={() => setIndex([0])}>
-                  Report Details
-                </Button>
-                <Button
-                  size="lg"
-                  colorScheme={"brandGreen"}
-                  onClick={() => setIndex([2])}
-                >
+                <Button size="lg">Report Details</Button>
+                <Button size="lg" colorScheme={"brandGreen"}>
                   Define Scope
                 </Button>
               </Flex>
@@ -456,14 +445,8 @@ const GenerateReportDrawer = ({ isOpen, onClose }: Props) => {
                 </TabPanels>
               </Tabs>
               <Flex justifyContent={"space-between"} mt={8}>
-                <Button size="lg" onClick={() => setIndex([1])}>
-                  Select Scope
-                </Button>
-                <Button
-                  size="lg"
-                  colorScheme={"brandGreen"}
-                  onClick={() => setIndex([3])}
-                >
+                <Button size="lg">Select Scope</Button>
+                <Button size="lg" colorScheme={"brandGreen"}>
                   Select Frequency
                 </Button>
               </Flex>
@@ -501,9 +484,7 @@ const GenerateReportDrawer = ({ isOpen, onClose }: Props) => {
                 </FormControl>
               </SimpleGrid>
               <Flex justifyContent={"space-between"} mt={8}>
-                <Button size="lg" onClick={() => setIndex([2])}>
-                  Define Scope
-                </Button>
+                <Button size="lg">Define Scope</Button>
                 <Button size="lg" colorScheme={"brandGreen"} onClick={onClose}>
                   Generate Report
                 </Button>
