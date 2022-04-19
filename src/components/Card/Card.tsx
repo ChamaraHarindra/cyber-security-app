@@ -4,15 +4,18 @@ import { Box, HStack, Text, useColorMode } from "@chakra-ui/react";
 interface Props {
   children?: ReactNode;
   title?: string;
+  mb?: number;
+  style?: object;
 }
 
-const Card = ({ children }: Props) => {
+const Card = ({ children, mb, style }: Props) => {
   const { colorMode } = useColorMode();
 
   return (
     <Box
       borderRadius="xl"
-      borderBottomRadius={"none"}
+      style={style}
+      mb={mb ? mb : 0}
       bg={colorMode === "light" ? "white" : "gray.700"}
     >
       <Box>{children}</Box>

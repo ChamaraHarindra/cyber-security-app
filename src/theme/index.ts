@@ -183,6 +183,15 @@ const theme = extendTheme(
         800: "#12173b",
         900: "#040819",
       },
+      resolved: {
+        500: "#66C083",
+      },
+      closed: { 500: "#EC524A" },
+      inProgress: { 500: "#DCB63D" },
+      open: { 500: "#A1A3F4" },
+      assigned: { 500: "#466DD1" },
+      onHold: { 500: "#DAA478" },
+      reOpened: { 500: "#BB7027" },
     },
   }
   // withDefaultColorScheme({
